@@ -1,10 +1,10 @@
 app="se-supervisions"
 
 [build]
-  dockerfile="../../dev/build/Dockerfile"
+ image = "ghcr.io/rrw1000/wikijs-sup:se_main"
 
 [deploy]
-  strategy="rolling"
+ strategy="rolling"
 
 [mounts]
  source = "se_supervisions_volume"
@@ -24,10 +24,8 @@ app="se-supervisions"
  protocol = "tcp"
 
 [[services.ports]]
- handlers = [ "http" ]
-# handlers = [ "tls" ]
- port = 80
-# force_https = false
+ handlers = [ "tls" ]
+ port = 443
 
 
 

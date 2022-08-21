@@ -23,3 +23,9 @@ resource "fly_volume" "seVolume" {
   region = "lhr"
   depends_on = [ fly_app.seSupervisions ]
 }
+
+resource "fly_cert" "seCert" {
+  app = fly_app.seSupervisions.name
+  hostname = "sup2.rrw.me.uk"
+}
+
