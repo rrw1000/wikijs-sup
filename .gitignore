@@ -47,3 +47,14 @@ test-results/
 
 # Localization Resources
 /server/locales/**/*.yml
+
+# emacs backups
+*~
+\#*
+.\#*
+
+# tf files
+dev/fly/tf/.terraform/**
+dev/fly/tf/.terraform*
+terraform.tfstate
+terraform.tfstate.backup

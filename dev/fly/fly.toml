@@ -1,0 +1,34 @@
+app="se-supervisions"
+
+[build]
+  dockerfile="../../dev/build/Dockerfile"
+
+[deploy]
+  strategy="rolling"
+
+[mounts]
+ source = "se_supervisions_volume"
+ destination = "/persist"
+
+[env]
+  DB_TYPE="sqlite"
+  DB_FILEPATH="/persist/wiki.sql"
+  # We don't use SSL in wikijs any more, because fly.io's support is better.
+  SSL_ACTIVE="false"
+  LETSENCRYPT_DOMAIN="sup.rrw.me.uk"
+  LETSENCRYPT_EMAIL="rrw@semiramis.org.uk"
+  HA_ACTIVE="false"
+
+[[services]]
+ internal_port = 3000
+ protocol = "tcp"
+
+[[services.ports]]
+ handlers = [ "http" ]
+# handlers = [ "tls" ]
+ port = 80
+# force_https = false
+
+
+
+ 
