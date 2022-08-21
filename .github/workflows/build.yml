@@ -8,6 +8,8 @@ on:
       - 'v*'
 
 env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{github.repository}}
   BASE_DEV_VERSION: 2.5.0
 
 jobs:
