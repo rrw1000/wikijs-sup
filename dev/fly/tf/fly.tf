@@ -26,6 +26,6 @@ resource "fly_volume" "seVolume" {
 
 resource "fly_cert" "seCert" {
   app = fly_app.seSupervisions.name
-  hostname = "sup2.rrw.me.uk"
+  hostname = "sup.rrw.me.uk"
 }
 

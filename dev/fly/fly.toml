@@ -1,7 +1,7 @@
 app="se-supervisions"
 
 [build]
- image = "ghcr.io/rrw1000/wikijs-sup:se_main"
+  image = "ghcr.io/rrw1000/wikijs-sup:se_main"
 
 [deploy]
  strategy="rolling"
